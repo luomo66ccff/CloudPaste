@@ -1,5 +1,15 @@
 # CloudPaste - 在线剪贴板 📋
 
+## March7th Paste 4.0
+
+新版 March7th Paste 应用位于 [march7th-paste/](march7th-paste/README.md)，使用 Next.js、React 和 Neon-compatible PostgreSQL。正式站点：[paste.march7th.cn](https://paste.march7th.cn)。
+
+进入 `march7th-paste/` 后，按该目录 README 安装依赖、运行测试及构建。通过 Vercel Git 集成部署时，将项目的 **Root Directory** 设为 `march7th-paste`；环境变量和数据库配置见新版 README。
+
+下面是本仓库保留的 Cloudflare 版本 CloudPaste 文档。
+
+---
+
 <div align="center">
     <p>
     <a href="README.md">中文</a> | <a href="README_EN.md">English</a>
