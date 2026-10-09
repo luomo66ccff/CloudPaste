@@ -1,0 +1,271 @@
+/*
+ * March7th Paste 4 · Breakpoints, touch sizing, motion and print.
+ * Rules in foundation.css are unconditional, so legacy mobile sizing that they
+ * would otherwise override is restated here.
+ */
+
+@media (max-width: 1100px) {
+  .header-inner {
+    gap: 16px;
+    padding-inline: 24px;
+  }
+  .version-tag {
+    display: none;
+  }
+  .nav-link {
+    padding: 0 12px;
+  }
+  .page-shell {
+    padding: 40px 30px 64px;
+  }
+  .site-footer > .footer-inner,
+  .site-footer > .footer-base {
+    padding-inline: 30px;
+  }
+}
+
+@media (max-width: 900px) {
+  html {
+    scroll-padding-top: 16px;
+  }
+  .site-header {
+    position: relative;
+    height: auto;
+  }
+  .header-inner {
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    padding: 12px 24px 10px;
+  }
+  .header-actions {
+    margin-left: auto;
+  }
+  .main-nav {
+    order: 3;
+    flex-basis: 100%;
+    justify-content: flex-start;
+    margin: 0;
+    overflow-x: auto;
+    border-radius: 16px;
+    scrollbar-width: none;
+  }
+  .main-nav::-webkit-scrollbar {
+    display: none;
+  }
+  .nav-link {
+    flex-shrink: 0;
+    height: 38px;
+  }
+  .nav-link.active::after {
+    bottom: 3px;
+  }
+  .page-shell {
+    padding: 36px 24px 56px;
+  }
+  .site-footer {
+    margin-top: 64px;
+  }
+  .site-footer > .footer-inner {
+    padding: 36px 24px 26px;
+  }
+  .site-footer > .footer-base {
+    padding: 16px 24px 28px;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    font-size: 15px;
+  }
+  .header-inner {
+    gap: 8px;
+    padding: 10px max(16px, env(safe-area-inset-right)) 10px
+      max(16px, env(safe-area-inset-left));
+  }
+  .brand {
+    gap: 8px;
+    font-size: 17px;
+  }
+  .brand-symbol,
+  .brand-symbol svg {
+    width: 30px;
+    height: 30px;
+  }
+  .header-actions {
+    gap: 4px;
+  }
+  .header-create,
+  .header-actions .header-create {
+    width: 44px;
+    min-width: 44px;
+    margin-left: 2px;
+    padding: 0;
+  }
+  .main-nav {
+    padding: 3px;
+  }
+  .nav-link {
+    height: 40px;
+    min-height: 40px;
+    padding: 0 13px;
+    font-size: 13px;
+  }
+  .page-shell {
+    padding: 28px max(16px, env(safe-area-inset-right)) 44px
+      max(16px, env(safe-area-inset-left));
+  }
+  .btn,
+  .btn-small {
+    min-height: 44px;
+  }
+  .icon-button {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  .search-field {
+    height: 46px;
+  }
+  .search-field input,
+  .field input,
+  .field select,
+  .field textarea,
+  .sort-select,
+  .toolbar-select,
+  .editor-find-input,
+  .reader-settings select {
+    min-height: 44px;
+    font-size: 16px;
+  }
+  .sort-select {
+    height: 46px;
+  }
+  .field > span,
+  .field > label,
+  .field small {
+    font-size: 13px;
+  }
+  .filter-tabs button {
+    min-height: 40px;
+  }
+  .section-title h2 {
+    font-size: 18px;
+  }
+  .page-heading h1 {
+    font-size: 28px;
+  }
+  .endpoint-line code {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+  .reader-settings {
+    font-size: 13px;
+  }
+  .app-dialog {
+    padding: 18px;
+    border-radius: 18px;
+  }
+  .site-footer {
+    margin-top: 56px;
+  }
+  .site-footer > .footer-inner {
+    flex-direction: column;
+    gap: 28px;
+    padding: 32px max(16px, env(safe-area-inset-right)) 22px
+      max(16px, env(safe-area-inset-left));
+  }
+  .footer-links {
+    gap: 40px;
+  }
+  .site-footer > .footer-base {
+    flex-direction: column;
+    padding: 16px max(16px, env(safe-area-inset-right))
+      max(24px, env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left));
+  }
+  .lost-page {
+    padding-top: 28px;
+  }
+  .lost-ticket {
+    grid-template-columns: minmax(0, 1fr) 88px;
+    margin-bottom: 32px;
+  }
+  .lost-ticket-code {
+    font-size: 54px;
+  }
+}
+
+@media (max-width: 360px) {
+  .page-heading h1 {
+    font-size: 26px;
+  }
+  .footer-links {
+    gap: 28px;
+  }
+}
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .site-header {
+    position: relative;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand:hover .brand-symbol,
+  .start-card:hover,
+  .tool-tile:hover,
+  .public-card:hover,
+  .template-tile:hover {
+    transform: none;
+  }
+}
+
+@media print {
+  body::before,
+  body::after {
+    display: none;
+  }
+  html,
+  body {
+    background: #fff;
+  }
+  .reader-ticket,
+  .lost-ticket {
+    filter: none;
+  }
+  .ticket-main,
+  .ticket-stub {
+    -webkit-mask: none;
+    mask: none;
+    border: 0;
+    background: none;
+    color: #000;
+  }
+  .ticket-main {
+    padding: 0 0 12px;
+  }
+  .ticket-stub {
+    padding: 0 0 16px;
+  }
+  .ticket-stub-label,
+  .ticket-stub .barcode {
+    display: none;
+  }
+  .ticket-stub dl {
+    grid-template-columns: repeat(4, auto);
+    justify-content: start;
+    gap: 4px 24px;
+  }
+  .reader-ticket {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .prose-paste pre,
+  .code-view,
+  .code-layout {
+    border: 1px solid #ccc;
+    background: #f6f7fb;
+    color: #111;
+  }
+  .prose-paste pre *,
+  .code-view * {
+    color: inherit !important;
+  }
+}
